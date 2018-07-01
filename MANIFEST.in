@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include rotaract3142 *.css
+recursive-include rotaract3142 *.csv
+recursive-include rotaract3142 *.html
+recursive-include rotaract3142 *.ico
+recursive-include rotaract3142 *.js
+recursive-include rotaract3142 *.json
+recursive-include rotaract3142 *.md
+recursive-include rotaract3142 *.png
+recursive-include rotaract3142 *.py
+recursive-include rotaract3142 *.svg
+recursive-include rotaract3142 *.txt
+recursive-exclude rotaract3142 *.pyc
