@@ -37,6 +37,7 @@
 	    <link rel="stylesheet" href='css/countdown.css' type='text/css' media='all' />
       <style type="text/css">
         #transparent-bg{
+          display: none;
           position: fixed;
           width: 100%;
           height: 100%;
@@ -61,6 +62,15 @@
           color: #ff1e58;
           text-decoration: underline;
         }
+          .sponsors-slider-list{text-align: center;}
+        .owl-carousel .owl-item img.sponsor-logo{
+            width: auto;
+            height: 80px;
+            margin: 0 auto;
+          }
+        .logo-text-names{font-size: 16px;}
+          div.icon-logo + h3{margin-top: 10px;}
+          .sponsors.home-page-sponsors{padding: 0 0 80px 0}
         @media screen and (max-width: 767px){
           .home-live-feeds iframe {
             margin: 0 auto!important;
@@ -76,6 +86,7 @@
             margin: 40px auto 0;
           }
           .close-window{left: 87%!important;}
+          
         }
       </style>
    </head>
@@ -160,7 +171,7 @@
       </nav>
       <!-- END Nav Bar --> 
       <!-- Banner -->
-      <div id="transparent-bg"">
+      <div id="transparent-bg">
         <div class="doh-link top-heading-soon">To know about our Drop of Hope locations go to <a href="doh_locations.html">Location Finder</a><p title="Close Window" class="close-window" style="top: -15px; left: 97%; position: absolute; font-size:  24px; background-color: #333; padding: 8px 12px; border-radius: 50%; color: #ffffff;cursor: pointer;">x</p></div>
       </div>
       <div id="particle" class="welcome-image-area particle-bg" data-stellar-background-ratio="0.6">
@@ -200,7 +211,7 @@
       <!--Main Features-->
       <!-- Added live twitter feed -->
 	 <!-- Countdown -->
-	  <div id="home" class="bg-soon low-back-i full-height">
+	  <!--<div id="home" class="bg-soon low-back-i full-height">
   <div class="text-con-i low-back-up">
     <div class="container text-center">
       <div class="row">
@@ -215,7 +226,7 @@
       </div>
     </div>
   </div>
-</div> 
+</div> -->
       <div class="section-title center">
          <h2 class="social-media-head">Social <strong>Media</strong></h2>
          <div class="home-live-feeds">
@@ -227,244 +238,62 @@
             <div class="twitter-feed">
                <a class="twitter-timeline" data-width="600" data-height="430" href="https://twitter.com/Rotaract_3142?ref_src=twsrc%5Etfw">Tweets by Rotaract_3142</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
-			</br>
-			</br></br>
+			<br>
+			<br><br>
 		</div>
       </div>
       <div class="main-features"></div>
       <div class="container">	  
          <div class="section-title center">
             <h2>Associated <strong>Brands</strong></h2>
-            <p class="para">Rotaract has been a youth brand for better half of the century. </br> 
-               To achieve our goals, Rotaract District 3142 has associated with lot of brands, </br>
+            <p class="para">Rotaract has been a youth brand for better half of the century. <br> 
+               To achieve our goals, Rotaract District 3142 has associated with lot of brands, <br>
                who have constantly supported and backed the Youth, doing something good for the society
             </p>
          </div>
-         <div class="row clearfix">
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Athena.jpg" alt="Athena"> </div>
-               <!-- </div> -->
-               <h3 class="text-center">Athena School of Management</h3>
-               <!-- </article> -->
+          
+          <!--Sponsors Section-->
+
+          <div class="sponsors home-page-sponsors">
+            <div class="container">
+            <div class="slider-outer"> 
+                <!--Sponsors Slider-->
+                <ul class="sponsors-slider sponsors-slider-list">
+                    <li><a href=""><img src="img/sponsors/Athena.jpg" alt="Athena" class="sponsor-logo"><h3 class="logo-text-names">Athena School of Management</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/dabur.png" alt="Dabur" class="sponsor-logo"><h3 class="logo-text-names">Dabur</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/digithinkit.png" alt="digithinkit" class="sponsor-logo"><h3 class="logo-text-names">DIGITHINKIT</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Mcdonalds.png" alt="McD" class="sponsor-logo"><h3 class="logo-text-names">McDonalds</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Avvatar.jpg" alt="Avvtar" class="sponsor-logo"><h3 class="logo-text-names">Avvatar</h3></a></li>
+                    
+                    <li><a href=""><img src="img/sponsors/icloak.png" alt="icloak" class="sponsor-logo"><h3 class="logo-text-names">iCloak</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Parag Foods.jpg" alt="Parag Foods" class="sponsor-logo"><h3 class="logo-text-names">Parag Foods</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/PAWS.jpg" alt="PAWS" class="sponsor-logo"><h3 class="logo-text-names">PAWS</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/pride of cows.jpg" alt="Pride of Cows" class="sponsor-logo"><h3 class="logo-text-names">Pride of Cows</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/titan-logo-sudarshan-dheer.jpg" alt="Titan" class="sponsor-logo"><h3 class="logo-text-names">Titan</h3></a></li>
+                    
+                    <li><a href=""><img src="img/sponsors/LOGO-MOTUL.jpg" alt="Motul" class="sponsor-logo"><h3 class="logo-text-names">Motul</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/yes.jpg" alt="Yes Foundation" class="sponsor-logo"><h3 class="logo-text-names">Yes Foundation</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Pillsbury.png" alt="Pillsbury" class="sponsor-logo"><h3 class="logo-text-names">Pillsbury</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/ZEE TV.jpeg" alt="Zee TV" class="sponsor-logo"><h3 class="logo-text-names">ZEE TV</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/ava logo.png" alt="Avart" class="sponsor-logo"><h3 class="logo-text-names">Avart</h3></a></li>
+                    
+                    <li><a href=""><img src="img/sponsors/Choice Consultancy.jpg" alt="Choice Consultancy" class="sponsor-logo"><h3 class="logo-text-names">Choice Consultancy</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Choice Overseas.jpg" alt="Choice Overseas" class="sponsor-logo"><h3 class="logo-text-names">Choice Overseas</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Encore Logo.jpg" alt="Encore" class="sponsor-logo"><h3 class="logo-text-names">Encore</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/FramedKalakaar.jpg" alt="Framed Kalakaar" class="sponsor-logo"><h3 class="logo-text-names">Framed Kalakaar</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Isthmus.jpg" alt="Isthmus" class="sponsor-logo"><h3 class="logo-text-names">Avvatar</h3></a></li>
+                    
+                    <li><a href=""><img src="img/sponsors/MaskaLogo.jpg" alt="Maska" class="sponsor-logo"><h3 class="logo-text-names">Maska</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Orchid.JPG" alt="Orchid Creatives" class="sponsor-logo"><h3 class="logo-text-names">Orchid Creatives</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Q1 Code Logo.png" alt="Q1 Codes" class="sponsor-logo"><h3 class="logo-text-names">Q1 Codes</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/Utopia.png" alt="Utopia Journeys" class="sponsor-logo"><h3 class="logo-text-names">Utopia Journeys</h3></a></li>
+                    <li><a href=""><img src="img/sponsors/walny.png" alt="Walny Techonologies" class="sponsor-logo"><h3 class="logo-text-names">Walny Techonologies</h3></a></li>
+                    
+                    <li><a href=""><img src="img/sponsors/Inspire.jpeg" alt="Inspire" class="sponsor-logo"><h3 class="logo-text-names">Inspire</h3></a></li>
+                </ul>
             </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/dabur.png" alt="dabur"> </div>
-               <!-- </div> -->
-               <h3 class="text-center">Dabur</h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/digithinkit.png" alt="digithinkit"> </div>
-               <!-- </div> -->
-               <h3 class="text-center">digithinkit</h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Mcdonalds.png" alt="McD"> </div>
-               <!-- </div> -->
-               <h3 class="text-center"> McDonald's </h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Avvatar.jpg" alt="Avvtar"> </div>
-               <!-- </div> -->
-               <h3 class="text-center"> Avvatar </h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/icloak.png" alt="icloak"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> iCloak </h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Parag Foods.jpg" alt="Parag Foods"> </div>
-               <!-- </div> -->
-               <h3 class="text-center"> Parag Foods </h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/PAWS.jpg" alt="PAWS"></div>
-               <!-- </div> -->
-               <h3 class="text-center">PAWS</h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/pride of cows.jpg" alt="Pride of Cows"></div>
-               <!-- </div> -->
-               <h3 class="text-center">Pride of Cows</h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/titan-logo-sudarshan-dheer.jpg" alt="Titan"> </div>
-               <!-- </div> -->
-               <h3 class="text-center"> Titan </h3>
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/LOGO-MOTUL.jpg" alt="Motul"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Motul </h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/yes.jpg" alt="Yes Foundation"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Yes Foundation </h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Pillsbury.png" alt="Pillsbury"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Pillsbury </h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/ZEE TV.jpeg" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> ZEE TV </h3>
-               <!-- </article> -->
-            </div>
-            <!--Default Icon Column-->
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/ava logo.png" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> AVART </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Choice Consultancy.jpg" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Choice Consultancy </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Choice Overseas.jpg" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Choice Overseas </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Encore Logo.jpg" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Encore </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/FramedKalakaar.jpg" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Framed Kalakaar </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Isthmus.jpg" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Isthmus </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/MaskaLogo.jpg" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Maska </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Orchid.JPG" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Orchid Creatives </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Q1 Code Logo.png" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Q1 Codes </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Utopia.png" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Utopia Journeys </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/walny.png" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Walny Technologies </h3>
-               <!-- </article> -->
-            </div>
-            <div class="default-icon-column col-lg-3 col-sm-6 col-xs-12">
-               <!-- <article class="inner-box"> -->
-               <!-- <div class="icon-box"> -->
-               <div class="icon-logo"> <img width = "140px" height = "140px" src="img/sponsors/Inspire.jpeg" alt="Zee TV"></div>
-               <!-- </div> -->
-               <h3 class="text-center"> Inspire </h3>
-               <!-- </article> --> 
-            </div>
-         </div>
+          </div>
+          </div>
       </div>
       <!-- END Features --> 
       <!-- About Project  -->
