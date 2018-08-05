@@ -6823,7 +6823,7 @@ label {
 }
 
 /*Bhavesh Changes 07/06/18*/
-.buy-theme, div.main-area, div.footer-section-area{display: none;}
+.buy-theme, div.footer-section-area{display: none;}
 .home-live-feeds iframe{margin: 0 auto;}
 div.icon-logo{text-align: center;}
 div.icon-logo + h3{}
