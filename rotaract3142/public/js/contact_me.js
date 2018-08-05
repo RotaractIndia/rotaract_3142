@@ -9,7 +9,6 @@ $(function () {
 			event.preventDefault(); // prevent default submit behaviour
 			// get values from FORM
 			var name = $("input#name").val();
-			console.log(name);
 			var email = $("input#email").val();
 			var message = $("textarea#message").val();
 			var firstName = name; // For Success/Failure Message
@@ -17,12 +16,10 @@ $(function () {
 			if (firstName.indexOf(' ') >= 0) {
 				firstName = name.split(' ').slice(0, -1).join(' ');
 			}
-			console.log("HELLO");
-			console.log(name, email, message);
 			$.ajax({
 				url: "/api/method/rotaract3142.rotaract_3142.api.make_enquiry",
 				type: "GET",
-				args: {
+				data: {
 					"fullname": name,
 					"email": email,
 					"message": message
