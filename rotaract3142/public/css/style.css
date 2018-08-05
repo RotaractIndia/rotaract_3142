@@ -335,7 +335,7 @@ p.para-w {
     opacity: 0.5
 }
 .bg-donation {
-    background: url(../img/children.jpg) repeat fixed 0 0 / cover
+    background: url(../img/leader.jpg) repeat fixed 0 0 / cover
 }
 
 
@@ -974,7 +974,7 @@ video {
     opacity: 0.8;
 }
 #benefit {
-    background: url(../img/children.jpg) repeat fixed 0 0 / cover;
+    background: url(../img/blood.jpg) repeat fixed 0 0 / cover;
 }
 .benefit-text {
     display: table-cell;
