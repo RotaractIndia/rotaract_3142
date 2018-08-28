@@ -15,12 +15,12 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/rotaract3142/css/rotaract3142.css"
+#app_include_css = "/assets/rotaract3142/css/rotaract.css"
 # app_include_js = "/assets/rotaract3142/js/rotaract3142.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/rotaract3142/css/rotaract3142.css"
-# web_include_js = "/assets/rotaract3142/js/rotaract3142.js"
+web_include_css = "/assets/rotaract3142/css/rotaract.css"
+web_include_js = "/assets/rotaract3142/js/rotaractblog.js"
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
@@ -119,4 +119,3 @@ app_license = "MIT"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "rotaract3142.event.get_events"
 # }
-
