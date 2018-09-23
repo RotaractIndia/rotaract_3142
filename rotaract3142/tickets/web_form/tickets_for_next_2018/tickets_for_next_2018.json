@@ -20,7 +20,7 @@
  "is_standard": 1, 
  "login_required": 0, 
  "max_attachment_size": 0, 
- "modified": "2018-09-24 00:42:35.538485", 
+ "modified": "2018-09-24 00:47:40.589917", 
  "modified_by": "Administrator", 
  "module": "Tickets", 
  "name": "tickets-for-next-2018", 
@@ -90,7 +90,7 @@
   {
    "allow_read_on_all_link_options": 0, 
    "fieldname": "amount", 
-   "fieldtype": "Data", 
+   "fieldtype": "Float", 
    "hidden": 0, 
    "label": "Total Amount", 
    "max_length": 0, 
