@@ -1,0 +1,27 @@
+.next-theconclave-bg{background: url(../img/next_the_conclave.jpg) no-repeat scroll 30% 30%/ cover; height: 75.5%}
+
+.blue {
+    color: #00C8F7;
+}
+
+.default-icon-column-next .icon-box-next .icon-next {
+    color: #00C8F7;
+    font-size: 36px;
+    position: relative;
+    z-index: 2; 
+}
+
+.default-icon-column-next .icon-box::before {
+    border: 2px dotted #f1f1f1;
+    border-radius: 50% 0 50% 50%;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all 700ms ease 0s;
+    width: 100%;
+    z-index: -999;
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, #00C8F7 50%, #4ddeff 100%) repeat scroll 0 0;
+    b
+}
