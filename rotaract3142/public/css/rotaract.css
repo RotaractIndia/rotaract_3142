@@ -41,3 +41,5 @@ p .blogpost-cover-img{width: 100%;}
   opacity: 1;
 }
 a:hover{color: rgb(255,30,88)!important;}
+
+.navbar-header { display: none; } div.web-form-page{ padding: 50px 50px 10px; background: #ffffff; border: 1px solid rgba(209,216,221,1); border-radius: 3px; width: 50%; margin: 0 auto; box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.18); } @media only screen and (max-width: 767px){ div.web-form-page{width: 80%;} }
