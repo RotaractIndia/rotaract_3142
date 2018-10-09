@@ -20,7 +20,7 @@
  "is_standard": 1, 
  "login_required": 0, 
  "max_attachment_size": 0, 
- "modified": "2018-09-24 01:14:07.031867", 
+ "modified": "2018-10-09 16:57:15.631166", 
  "modified_by": "Administrator", 
  "module": "Tickets", 
  "name": "tickets-for-next-2018", 
@@ -76,7 +76,7 @@
   }, 
   {
    "allow_read_on_all_link_options": 0, 
-   "description": "Buying this pass lets you attend all our #awsome workshops for INR 50 only!", 
+   "description": "Buying this pass lets you attend all our #awesome workshops & masterclasses for INR 50 only!", 
    "fieldname": "workshop_pass", 
    "fieldtype": "Check", 
    "hidden": 0, 
