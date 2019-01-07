@@ -15,7 +15,7 @@ frappe.ui.form.on('AARA Nomination Project', {
             frm.refresh_fields("projects");
         } else {
             frappe.call({
-                method: "pranali_reloaded.pranali_reloaded.doctype.aara_nomination.aara_nomination.get_nomination_avenue",
+                method: "rotaract3142.rotaract_3142.doctype.aara_nomination.aara_nomination.get_nomination_avenue",
                 args: {
                     "project": local.project,
                     "avenue": local.nominate_for
