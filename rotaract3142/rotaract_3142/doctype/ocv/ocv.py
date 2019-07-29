@@ -9,7 +9,6 @@ from frappe.model.document import Document
 class OCV(Document):
 	def validate(self):
 		self.points = 0
-		print frappe.utils.now()
 		if frappe.utils.now() < "2018-01-01":
 			self.points = 5000
 		if self.gavel:
