@@ -22,6 +22,14 @@ app_license = "MIT"
 web_include_css = "/assets/rotaract3142/css/rotaract.css"
 web_include_js = "/assets/rotaract3142/js/rotaractblog.js"
 
+icons = [{
+	"label": "AARA Nomination",
+	"icon": "octicon octicon-gift",
+	"type": 'doctype',
+	"name": 'AARA Nomination',
+	"link": '#List/AARA Nomination/List'
+}]
+
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
 
