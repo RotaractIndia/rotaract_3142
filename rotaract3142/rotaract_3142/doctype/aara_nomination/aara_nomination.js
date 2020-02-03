@@ -40,5 +40,9 @@ frappe.ui.form.on('AARA Nomination', {
                 }
             }
         });
+    },
+    refresh: function(frm) {
+        cur_frm.add_fetch('project',  'project_name',  'project_name'); 
     }
+
 });

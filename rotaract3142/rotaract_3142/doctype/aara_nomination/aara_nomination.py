@@ -59,6 +59,12 @@ class AARANomination(Document):
 						else:
 							avenue_list.update({d.avenue: 2})
 
+	def before_submit(self):
+		existing_nomination = frappe.get_all("AARA Nomination", filters={"Club": self.club, "Quarter": self.quarter, "docstatus": 1})
+		print(existing_nomination)
+		if existing_nomination:
+			frappe.throw("You have already submitted a Nomination for Quarter {0}. Please cancel {1} to proceed".format(self.quarter, existing_nomination[0].name))
+
 @frappe.whitelist()
 def get_nomination_avenue(project=None, avenue=None):
 	return frappe.db.get_value("Project", project, frappe.scrub(avenue))
