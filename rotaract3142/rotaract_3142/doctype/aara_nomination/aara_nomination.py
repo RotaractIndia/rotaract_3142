@@ -11,6 +11,7 @@ class AARANomination(Document):
 		avenue_list = {}
 		joint = 0
 		ongoing = 0
+		flagship = 0 
 		nomination_avenue = []
 		if self.quarter == "One":
 			nomination_avenue = [ "July", "August", "September"]
@@ -27,12 +28,15 @@ class AARANomination(Document):
 
 			if d.nominate_for == "Ongoing":
 					if ongoing==2:
-								frappe.throw("You cannot nominate more than 2 Joint Projects in a quarter")
+								frappe.throw("You cannot nominate more than 2 ongoing Projects in a quarter")
 					else:
-						ongoing = joint + 1
+						ongoing = ongoing + 1
 					
 			elif d.nominate_for == "Flagship":
-				pass
+				if flagship==2:
+								frappe.throw("You cannot nominate more than 2 flagship Projects in a quarter")
+					else:
+						flagship = flagship + 1
 			else:
 				reporting_month = frappe.db.get_value("Project", d.project, "reporting_month")
 				if reporting_month not in nomination_avenue:
