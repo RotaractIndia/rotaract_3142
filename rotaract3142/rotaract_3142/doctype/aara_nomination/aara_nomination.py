@@ -27,16 +27,15 @@ class AARANomination(Document):
 				frappe.throw("You cannot nominate project {0} - {1} as it was reported late".format(d.project, d.project_name))
 
 			if d.nominate_for == "Ongoing":
-					if ongoing==2:
-						rappe.throw("You cannot nominate more than 2 ongoing Projects in a quarter")
-					else:
-						ongoing = ongoing + 1
-					
+				if ongoing==2:
+					rappe.throw("You cannot nominate more than 2 ongoing Projects in a quarter")
+				else:
+					ongoing = ongoing + 1
 			elif d.nominate_for == "Flagship":
 				if flagship==2:
 						frappe.throw("You cannot nominate more than 2 flagship Projects in a quarter")
-					else:
-						flagship = flagship + 1
+				else:
+					flagship = flagship + 1
 			else:
 				reporting_month = frappe.db.get_value("Project", d.project, "reporting_month")
 				if reporting_month not in nomination_avenue:
@@ -44,12 +43,10 @@ class AARANomination(Document):
 						.format(d.project, d.project_name, self.quarter, reporting_month))
 									
 				if d.nominate_for == "Joint":
-
 					if joint==2:
 							frappe.throw("You cannot nominate more than 2 Joint Projects in a quarter")
 					else:
 						joint = joint + 1
-					
 				else:
 					d.avenue = frappe.db.get_value("Project", d.project, frappe.scrub(d.nominate_for))
 					if frappe.db.get_value("Project", d.project, "joint_project"):
