@@ -28,7 +28,7 @@ class AARANomination(Document):
 
 			if d.nominate_for == "Ongoing":
 				if ongoing==2:
-					rappe.throw("You cannot nominate more than 2 ongoing Projects in a quarter")
+					frappe.throw("You cannot nominate more than 2 ongoing Projects in a quarter")
 				else:
 					ongoing = ongoing + 1
 			elif d.nominate_for == "Flagship":
