@@ -77,14 +77,40 @@
 		height: 400px;
 		border-radius: 5px;
 	}
+
+	@media screen and (max-width: 700px) {
+		iframe {
+			width: 95%;
+			height: 300px;
+		}
+
+		#timer {
+			width: 320px;
+		}
+
+		#days,
+		#hours,
+		#minutes,
+		#seconds {
+			font-size: 20px;
+			;
+			width: 60px;
+			height: 60px;
+			box-sizing: border-box;
+			padding: 7px 0;
+		}
+
+		span {
+			font-size: 10px;
+		}
+	}
 </style>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
 
 <div class="parentbody">
 	<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
-		src="https://www.youtube.com/embed/dhMcmZSM9T4?autoplay=1&loop=1&rel=0&showinfo=0"
-		frameborder="0"></iframe>
+		src="https://www.youtube.com/embed/dhMcmZSM9T4?autoplay=1&loop=1&rel=0&showinfo=0" frameborder="0"></iframe>
 	<div id="timer">
 		<div id="days"></div>
 		<div id="hours"></div>
