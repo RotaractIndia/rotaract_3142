@@ -19,7 +19,13 @@ app_license = "MIT"
 # app_include_js = "/assets/rotaract3142/js/rotaract3142.js"
 
 # include js, css files in header of web template
-web_include_css = "/assets/rotaract3142/css/rotaract.css"
+web_include_css = [
+	"/assets/rotaract3142/css/rotaract.css",
+	"/assets/rotaract3142/css/et-line-font/et-line-font.css",
+	"/assets/rotaract3142/css/menuzord.css",
+	"/assets/rotaract3142/css/owl.css",
+	"/assets/rotaract3142/css/style.css"
+]
 web_include_js = "/assets/rotaract3142/js/rotaractblog.js"
 
 icons = [
