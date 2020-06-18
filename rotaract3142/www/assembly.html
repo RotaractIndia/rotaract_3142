@@ -222,12 +222,20 @@
 		.aara-heist-logo {
 			right: 0;
 			transform: translate(-50%);
+			bottom: 0px;
 		}
 
 		.flip-clock {
 			width: 100%;
-			bottom: 90px;
+			bottom: 60px;
 		}
+
+		.parentbody {
+			position: absolute;
+			overflow: auto;
+			height: 110vh;
+		}
+		
 	}
 </style>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -238,12 +246,6 @@
 	<div class="aara-heist-logo"><img src="/assets/rotaract3142/img/assembly/aara-heist-logo.png"></div>
 	<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
 		src="https://www.youtube.com/embed/dhMcmZSM9T4?autoplay=1&loop=1&rel=0&showinfo=0" frameborder="0"></iframe>
-	<div id="timer">
-		<div id="days"></div>
-		<div id="hours"></div>
-		<div id="minutes"></div>
-		<div id="seconds"></div>
-	</div>
 </div>
 <script>
 
