@@ -42,7 +42,7 @@
 	}
 
 	.login--modal {
-		background-color: #333;
+		background-color: #fff;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -55,14 +55,14 @@
 	.login--modal-text {
 		font-size: 24px;
 		text-align: center;
-		color: #fff;
+		color: #333;
 	}
 
 	.login--yes,
 	.login--no {
 		width: 150px;
-		border-radius: 10px;
-		font-size: 16px;
+		border-radius: 2px;
+		font-size: 18px;
 		cursor: pointer;
 		text-align: center;
 		background: #5e64ff;
@@ -83,78 +83,6 @@
 		background: rgb(255, 30, 88) !important;
 		color: #fff !important;
 		transition: 0.3s all;
-	}
-
-	.glow-on-hover {
-		border: none;
-		outline: none;
-		color: #fff;
-		background: #111;
-		cursor: pointer;
-		position: relative;
-		z-index: 0;
-		border-radius: 10px;
-	}
-
-	.glow-on-hover:before {
-		content: '';
-		background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-		position: absolute;
-		top: -2px;
-		left: -2px;
-		background-size: 400%;
-		z-index: -1;
-		filter: blur(5px);
-		width: calc(100% + 4px);
-		height: calc(100% + 4px);
-		animation: glowing 20s linear infinite;
-		opacity: 0;
-		transition: opacity .3s ease-in-out;
-		border-radius: 10px;
-	}
-
-	.glow-on-hover:active {
-		color: #000
-	}
-
-	.glow-on-hover:active:after {
-		background: transparent;
-	}
-
-	.glow-on-hover:hover:before {
-		opacity: 1;
-	}
-
-	.glow-on-hover:after {
-		z-index: -1;
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background: #111;
-		left: 0;
-		top: 0;
-		border-radius: 10px;
-	}
-
-	.page-button {
-		position: absolute;
-		top: 20px;
-		right: 30px;
-	}
-
-	@keyframes glowing {
-		0% {
-			background-position: 0 0;
-		}
-
-		50% {
-			background-position: 400% 0;
-		}
-
-		100% {
-			background-position: 0 0;
-		}
 	}
 
 	.login--page-buttons {
@@ -355,9 +283,9 @@
 
 		.login--yes,
 		.login--no {
-			font-size: 12px;
+			font-size: 14px;
 			margin: 0 5px;
-			height: 32px;
+			height: 36px;
 		}
 
 		.login--modal {
@@ -395,24 +323,14 @@
 			width: 100%;
 			bottom: 60px;
 			bottom: auto;
-			top: 80px;
-		}
-
-		.page-button {
-			top: 170px;
-			right: 50%;
-			transform: translate(50%);
+			top: 70px;
 		}
 
 		.rotaract--quarter-main {
 			top: 20%;
 		}
 
-		iframe {
-			top: 380px;
-		}
-
-		.rotaract--carousel {
+		iframe, .rotaract--carousel {
 			top: 45%;
 		}
 
@@ -422,10 +340,10 @@
 
 <div class="login--overlay">
 	<div class="login--modal">
-		<p class="login--modal-text">Want to checkout the secrets?</p>
+		<p class="login--modal-text">Did you check-in for the event?</p>
 		<div class="login--page-buttons">
-			<a class="login--no glow-on-hover" href="javascript:void(0)">Reveal Secrets</a>
-			<a class="login--yes" href="javascript:void(0)">Watch Trailer</a>
+			<a class="login--no" href="/checkin?new=1">No, fill form</a>
+			<a class="login--yes" href="javascript:void(0)">Yes, Continue</a>
 		</div>
 	</div>
 </div>
@@ -434,21 +352,14 @@
 	<div class="assembly-logo"><img src="/assets/rotaract3142/img/assembly/main-logo.png"></div>
 	<div class="aara-heist-logo"><img src="/assets/rotaract3142/img/assembly/aara-heist-logo.png"></div>
 	<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
-		src="https://www.youtube.com/embed/dhMcmZSM9T4?loop=1&rel=0&showinfo=0" frameborder="0"></iframe>
+		src="https://www.youtube.com/embed/dhMcmZSM9T4?autoplay=1&loop=1&rel=0&showinfo=0" frameborder="0"></iframe>
 </div>
 <script>
 	jQuery(document).ready(function ($) {
 		jQuery('.login--yes').on('click', function () {
 			jQuery('.login--overlay').fadeOut();
-			jQuery('.parentbody').append('<a class="page-button login--no glow-on-hover" href="javascript:void(0)">Reveal Secrets</a>');
-		});
-		jQuery('div').on('click', '.login--no', function () {
-			setTimeout(loadPage, 2000);
 		});
 	});
-	function loadPage() {
-		window.location.href = 'https://rotaract3142.org/nominations-page';
-	}
 </script>
 <script>
 
