@@ -3,6 +3,9 @@
 <meta name="robots" content="noindex, nofollow">
 
 <style>
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
+	@import url('https://fonts.googleapis.com/css?family=Raleway:300,900,100,600,400,500,800');
+
 	html {
 		height: 100vh;
 		overflow: none;
@@ -59,7 +62,8 @@
 		font-family: sans-serif;
 	}
 
-	#project-parent h2, .no-nominations {
+	.project-parent h2,
+	.no-nominations {
 		font-size: 40px;
 		font-weight: bolder;
 		font-family: Helvetica;
@@ -115,16 +119,8 @@
 			left: 15vw;
 		}
 
-		25% {
-			left: 14.9vw;
-		}
-
 		50% {
-			left: 14.8vw;
-		}
-
-		75% {
-			left: 14.9vw;
+			left: 14.6vw;
 		}
 
 		100% {
@@ -137,16 +133,8 @@
 			right: 15vw;
 		}
 
-		25% {
-			right: 14.9vw;
-		}
-
 		50% {
-			right: 14.8vw;
-		}
-
-		25% {
-			right: 14.9vw;
+			right: 14.6vw;
 		}
 
 		100% {
@@ -367,6 +355,47 @@
 		}
 	}
 
+	@media screen and (max-width: 1200px) and (min-width: 700px) {
+		.rotaract--carousel-prev {
+			left: 15px;
+		}
+
+		.rotaract--carousel-next {
+			right: 15px;
+		}
+
+		.rotaract--carousel {
+			top: 35%;
+		}
+
+		@keyframes prev-turn {
+			0% {
+				left: 15px;
+			}
+
+			50% {
+				left: 10px;
+			}
+
+			100% {
+				left: 15px;
+			}
+		}
+
+		@keyframes next-turn {
+			0% {
+				right: 15px;
+			}
+
+			50% {
+				right: 10px;
+			}
+
+			100% {
+				right: 15px;
+			}
+		}
+	}
 
 	@media screen and (max-width: 700px) {
 		iframe {
@@ -400,28 +429,36 @@
 		}
 
 		.aara-heist-logo {
-			right: 0;
+			left: 50%;
 			transform: translate(-50%);
 			bottom: 0px;
+			right: auto;
 		}
 
 		.flip-clock {
 			width: 100%;
 			bottom: 60px;
+			bottom: auto;
+			top: 70px;
 		}
 
-		#project-parent h2, .no-nominations {
+		.project-parent h2,
+		.no-nominations {
 			font-size: 30px;
 		}
 
-		.parentbody {
-			position: absolute;
-			overflow: auto;
-			height: 110vh;
+		
+
+		.rotaract--quarter-main {
+			max-height: 400px;
 		}
 
 		.rotaract--quarter-main {
-			max-height: 500px;
+			top: 150px;
+		}
+
+		.rotaract--carousel {
+			top: 40%;
 		}
 
 		@keyframes prev-turn {
@@ -461,7 +498,7 @@
 	<div class="aara-heist-logo"><img src="/assets/rotaract3142/img/assembly/aara-heist-logo.png"></div>
 	<span class="rotaract--carousel rotaract--carousel-prev"></span>
 	<div class="rotaract--nomination-parent">
-		<div id="quarter-3" class="rotaract--quarter-main">
+		<div class="quarter-3 rotaract--quarter-main">
 			<h2>Editorial</h2>
 			<p>Quarter 3 Nominations</p>
 			<ul class="rotaract--project-list">
@@ -474,7 +511,7 @@
 				<li><strong>Mein bhi Editor</strong> - Rotaract Club of Ambernath</li>
 			</ul>
 		</div>
-		<div id="quarter-4" class="rotaract--quarter-main">
+		<div class="quarter-4 rotaract--quarter-main">
 			<h2>Editorial</h2>
 			<p>Quarter 4 Nominations</p>
 			<ul class="rotaract--project-list">
@@ -484,10 +521,10 @@
 				<li><strong>Poetica 3.0</strong> - Rotaract Club of Smart City Navi Mumbai</li>
 			</ul>
 		</div>
-		<div id="project-parent" class="rotaract--quarter-main">
+		<div class="project-parent rotaract--quarter-main">
 			<h2>Editorial<br>Project Nominations</h2>
 		</div>
-		<div id="quarter-1" class="rotaract--quarter-main">
+		<div class="quarter-1 rotaract--quarter-main">
 			<h2>Editorial</h2>
 			<p>Quarter 1 Nominations</p>
 			<ul class="rotaract--project-list">
@@ -495,12 +532,12 @@
 				<li><strong>A Little bit of Everything</strong> - Rotaract Club of Kalyan Riverside</li>
 			</ul>
 		</div>
-		<div id="quarter-2" class="rotaract--quarter-main">
+		<div class="quarter-2 rotaract--quarter-main">
 			<h2>Editorial</h2>
 			<p>Quarter 2 Nominations</p>
 			<ul class="rotaract--project-list">
-				<li><strong>Spellmaster</strong> - Rotaract Club of SIES (Nerul)</li>
-				<li><strong>Tellykazam </strong> - Rotaract Club of Ulhasnagar Sapna Garden</li>
+				<li><strong>Spellmaster</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li>
+				<li><strong>Tellykazam </strong> - Rotaract Club of SIES (Nerul)</li>
 
 			</ul>
 		</div>
@@ -519,49 +556,53 @@
 	});
 	function changePpt() {
 		var currentDate = new Date();
+		var cD = currentDate.getDate();
+		var cH = currentDate.getHours();
+		var cM = currentDate.getMinutes();
+		var cS = currentDate.getSeconds();
 		/*Commserv*/
-		if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 43 && currentDate.getSeconds() == 20) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>Community Service</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>HAND MADE MASK DISTRIBUTION</strong> - Rotaract Club of Royal College</li><li><strong>Bald is Happy</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Protecting Paws</strong> - Rotaract Club of Thane North End</li><li><strong>We for Her</strong> - Rotaract Club of Saraswati College</li><li><strong>Rang De Paathshala</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>Community Service</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Thane COVID-19 Relief</strong> - Rotaract Club of Link Town Airoli</li><li><strong>Pawsitivity</strong> - Rotaract Club of Saraswati College</li><li><strong>Grocery kit Donation</strong> - Rotaract Club of Dombivili East</li><li><strong>Face Shields Distribution Drive</strong> - Rotaract Club of Thane Skyline</li><li><strong>WHAT CAN YOU DELIVER </strong> - Rotaract Club of MIM College</li><li><strong>All Smiles</strong> - Rotaract Club of Thane North End</li><li><strong>Suncity Fights Corona</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>Community Service<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>Community Service</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Punnya Denagi</strong> - Rotaract Club of Ambernath East</li><li><strong>Gananayak 3.0</strong> - Rotaract Club of Dombivili East</li><li><strong>Cure Cab</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Lend A Hand Donation Drive</strong> - Rotaract Club of New Bombay</li><li><strong>VIDYAVARDHINI- One Book, One Pen Initiative</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Adopt a Grandfriend</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Biscute</strong> - Rotaract Club of Thane North End</li><li><strong>Relief for Maharashtra</strong> - Rotaract Club of Link Town Airoli</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>Community Service</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Happy Meal</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Deepanjali </strong> - Rotaract Club of Thane North</li><li><strong>Mid-day meal</strong> - Rotaract Club of Thane Downtown</li><li><strong>SANTA ON WHEELS</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Khaana, Kapda, Kambal</strong> - Rotaract Club of Thane North End</li></ul></div>')
+		if (cD == 20 && cH == 13 && cM == 00 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>Community Service</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>HAND MADE MASK DISTRIBUTION</strong> - Rotaract Club of Royal College</li><li><strong>Bald is Happy</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Protecting Paws</strong> - Rotaract Club of Thane North End</li><li><strong>We for Her</strong> - Rotaract Club of Saraswati College</li><li><strong>Rang De Paathshala</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>Community Service</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Thane COVID-19 Relief</strong> - Rotaract Club of Link Town Airoli</li><li><strong>Pawsitivity</strong> - Rotaract Club of Saraswati College</li><li><strong>Grocery kit Donation</strong> - Rotaract Club of Dombivili East</li><li><strong>Face Shields Distribution Drive</strong> - Rotaract Club of Thane Skyline</li><li><strong>WHAT CAN YOU DELIVER </strong> - Rotaract Club of MIM College</li><li><strong>All Smiles</strong> - Rotaract Club of Thane North End</li><li><strong>Suncity Fights Corona</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>Community Service<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>Community Service</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Punnya Denagi</strong> - Rotaract Club of Ambernath East</li><li><strong>Gananayak 3.0</strong> - Rotaract Club of Dombivili East</li><li><strong>Cure Cab</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Lend A Hand Donation Drive</strong> - Rotaract Club of New Bombay</li><li><strong>VIDYAVARDHINI- One Book, One Pen Initiative</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Adopt a Grandfriend</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Biscute</strong> - Rotaract Club of Thane North End</li><li><strong>Relief for Maharashtra</strong> - Rotaract Club of Link Town Airoli</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>Community Service</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Happy Meal</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Deepanjali </strong> - Rotaract Club of Thane North</li><li><strong>Mid-day meal</strong> - Rotaract Club of Thane Downtown</li><li><strong>SANTA ON WHEELS</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Khaana, Kapda, Kambal</strong> - Rotaract Club of Thane North End</li></ul></div>')
 		}
 		/*Digicomm*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 40 && currentDate.getSeconds() == 0) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>Web Communication</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Reveal the artist</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Few things which LGBT community are tired of hearing</strong> - Rotaract Club of Thane East</li><li><strong>Wild Shutter 4.0</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Safe Sex Awareness Drive</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>Web Communication</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Social Battle League 3.0</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Sawal-Jawab </strong> - Rotaract Club of Kalyan West</li><li><strong>The Make Up & The Desi Boyz challenge </strong> - Rotaract Club of Thane North End</li><li><strong>Well\'VET</strong> - Rotaract Club of Badlapur Industrial Area</li><li><strong>Toffee with Varan</strong> - Rotaract Club of Ambernath East</li><li><strong>Quaran-time Special</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>What\'s Good ? ( 180 Seconds of good News)</strong> - Rotaract Club of Dombivli</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>Web Communication<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>Web Communication</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Nasty Things Which Girls Are Tired Of Hearing About Makeup.</strong> - Rotaract Club of Thane East</li><li><strong>Unspoken Need</strong> - Rotaract Club of Kalyan Riverside</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>Web Communication</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Death Calculator</strong> - Rotaract Club of Thane Central</li><li><strong>NO SHAVE NOVEMBER 3.0 </strong> - Rotaract Club of Kalyan Riverside</li></ul></div>');
+		else if (cD == 19 && cH == 11 && cM == 30 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>Web Communication</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Reveal the artist</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Few things which LGBT community are tired of hearing</strong> - Rotaract Club of Thane East</li><li><strong>Wild Shutter 4.0</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Safe Sex Awareness Drive</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>Web Communication</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Social Battle League 3.0</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Sawal-Jawab </strong> - Rotaract Club of Kalyan West</li><li><strong>The Make Up & The Desi Boyz challenge </strong> - Rotaract Club of Thane North End</li><li><strong>Well\'VET</strong> - Rotaract Club of Badlapur Industrial Area</li><li><strong>Toffee with Varan</strong> - Rotaract Club of Ambernath East</li><li><strong>Quaran-time Special</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>What\'s Good ? ( 180 Seconds of good News)</strong> - Rotaract Club of Dombivli</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>Web Communication<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>Web Communication</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Nasty Things Which Girls Are Tired Of Hearing About Makeup.</strong> - Rotaract Club of Thane East</li><li><strong>Unspoken Need</strong> - Rotaract Club of Kalyan Riverside</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>Web Communication</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Death Calculator</strong> - Rotaract Club of Thane Central</li><li><strong>NO SHAVE NOVEMBER 3.0 </strong> - Rotaract Club of Kalyan Riverside</li></ul></div>');
 		}
 		/*HRD*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 40 && currentDate.getSeconds() == 20) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>HRD</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Core Swap</strong> - Rotaract Club of Thane North End</li><li><strong>SAKSHAM RELOADED (Phase 1)</strong> - Rotaract Club of Birla College</li><li><strong>ROTAVENGER</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>HRD</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Ek Din Ka Core</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>GLEAM</strong> - Rotaract Club of Birla College</li><li><strong>Seekh rotaract seekh </strong> - Rotaract Club of Ambernath</li><li><strong>Quarantine Challenge</strong> - Rotaract Club of DYPSBB Satellite City</li><li><strong>SuperHeroes Assemble</strong> - Rotaract Club of Thane North End</li><li><strong>QSquadron Spectrum </strong> - Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>Rota Talks: Level Up</strong> - Rotaract Club of Kalyan Riverside</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>HRD<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>HRD</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>You\'re the Missing Part</strong> - Rotaract Club of Kalyan Riverside</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>HRD</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Mulakat</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Applause 2.0 - The Club Pointing System (Quarter 2)</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Synergy</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li></ul></div>');
+		else if (cD == 19 && cH == 13 && cM == 00 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>HRD</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Core Swap</strong> - Rotaract Club of Thane North End</li><li><strong>SAKSHAM RELOADED (Phase 1)</strong> - Rotaract Club of Birla College</li><li><strong>ROTAVENGER</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>HRD</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Ek Din Ka Core</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>GLEAM</strong> - Rotaract Club of Birla College</li><li><strong>Seekh rotaract seekh </strong> - Rotaract Club of Ambernath</li><li><strong>Quarantine Challenge</strong> - Rotaract Club of DYPSBB Satellite City</li><li><strong>SuperHeroes Assemble</strong> - Rotaract Club of Thane North End</li><li><strong>Squadron Spectrum </strong> - Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>Rota Talks: Level Up</strong> - Rotaract Club of Kalyan Riverside</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>HRD<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>HRD</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>You\'re the Missing Part</strong> - Rotaract Club of Kalyan Riverside</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>HRD</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Mulakat</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Applause 2.0 - The Club Pointing System (Quarter 2)</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Synergy</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li></ul></div>');
 		}
 		/*PIS*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 40 && currentDate.getSeconds() == 40) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>PIS</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Fund Collection (Parent Rotary Food Donation Drive)</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Chota Scientist</strong> - Rotaract Club of Thane Townwing</li><li><strong>Interact fun destination</strong> - Rotaract Club of Ambernath</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>PIS</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Food Donation Drive </strong> - Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>Food Bank</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>PIS<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>PIS</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Matoshree camp </strong> - Rotaract Club of Thane Downtown</li><li><strong>Sham-e-mehfil</strong> - Rotaract Club of Kalyan West</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>PIS</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>INTERACTORS GOT TALENT 2.0</strong> - Rotaract Club of Birla College</li></ul></div>');
+		else if (cD == 19 && cH == 14 && cM == 30 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>PIS</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Fund Collection (Parent Rotary Food Donation Drive)</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Chota Scientist</strong> - Rotaract Club of Thane Townwing</li><li><strong>Interact fun destination</strong> - Rotaract Club of Ambernath</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>PIS</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Food Donation Drive </strong> - Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>Food Bank</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>PIS<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>PIS</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Matoshree camp </strong> - Rotaract Club of Thane Downtown</li><li><strong>Sham-e-mehfil</strong> - Rotaract Club of Kalyan West</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>PIS</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>INTERACTORS GOT TALENT 2.0</strong> - Rotaract Club of Birla College</li></ul></div>');
 		}
 		/*Joint*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 41 && currentDate.getSeconds() == 0) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>Joint Project</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>ROTARY YOUTH LEADERSHIP AWARDS (RYLA)</strong> - Rotaract Club of New Bombay Seaside, Rotaract Club of SIES (Nerul)</li><li><strong>SEVA Phase 2</strong> - Rotaract Club of Bharati Vidyapeeth Sunrise, Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>White Revolution 7</strong> - Rotaract Club of Thane East, Rotaract Club of Kalyan Riverside, Rotaract Club of Dombivli Central, Rotaract Club of Thane Midtown, Rotaract Club of Navi Mumbai Industrial Area, Rotaract Club of Thane TownWing, Rotaract Club of Thane Central, Rotaract Club of Thane Downtown</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>Joint Project</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>PUSTAKDAAN </strong> - Rotaract Club of Thane Downtown, Rotaract Club of Ambernath</li><li><strong>Survival of the Fittest 2.0</strong> - Rotaract Club of Link Town Airoli, Rotaract Club of Saraswati College, Rotaract Club of Dombivili East, Rotaract Club of New Bombay Seaside, Rotaract Club of Ambernath, Rotaract Club of SIES (Nerul), Rotaract Club of Smart City Navi Mumbai, Rotaract Club of DYPSBB Satellite City, Rotaract Club of Navi Mumbai Hillside</li><li><strong>Mandela 102 </strong> - Rotaract Club of Dombivli, Rotaract Club of Thane North End, Rotaract Club of Smart City Navi Mumbai</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>Joint Project<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>Joint Project</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>MUD SOCCER</strong> - Rotaract Club of Dombivli Central, Rotaract Club of Kalyan Riverside, Rotaract Club of Birla College</li><li><strong>RRL: Rotary Rotaract League</strong> - Rotaract Club of Kalyan West, Rotaract Club of Kalyan Central, Rotaract Club of Birla College</li><li><strong>STEM CELL DONATION AWARENESS DRIVE</strong> - Rotaract Club of Smart City Navi Mumbai, Rotaract Club of Dombivli Suncity, Rotaract Club of Ambernath, Rotaract Club of Navi Mumbai Industrial Area</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>Joint Project</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>LIGHTING THE SMILES </strong> - Rotaract Club of Thane Creekside, Rotaract Club of K.V. Pendharkar College, Rotaract Club of Saraswati College, Rotaract Club of Thane Hills</li></ul></div>');
+		else if (cD == 19 && cH == 16 && cM == 00 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>Joint Project</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>ROTARY YOUTH LEADERSHIP AWARDS (RYLA)</strong> - Rotaract Club of New Bombay Seaside, Rotaract Club of SIES (Nerul)</li><li><strong>SEVA Phase 2</strong> - Rotaract Club of Bharati Vidyapeeth Sunrise, Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>White Revolution 7</strong> - Rotaract Club of Thane East, Rotaract Club of Kalyan Riverside, Rotaract Club of Dombivli Central, Rotaract Club of Thane Midtown, Rotaract Club of Navi Mumbai Industrial Area, Rotaract Club of Thane TownWing, Rotaract Club of Thane Central, Rotaract Club of Thane Downtown</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>Joint Project</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>PUSTAKDAAN </strong> - Rotaract Club of Thane Downtown, Rotaract Club of Ambernath</li><li><strong>Survival of the Fittest 2.0</strong> - Rotaract Club of Link Town Airoli, Rotaract Club of Saraswati College, Rotaract Club of Dombivili East, Rotaract Club of New Bombay Seaside, Rotaract Club of Ambernath, Rotaract Club of SIES (Nerul), Rotaract Club of Smart City Navi Mumbai, Rotaract Club of DYPSBB Satellite City, Rotaract Club of Navi Mumbai Hillside</li><li><strong>Mandela 102 </strong> - Rotaract Club of Dombivli, Rotaract Club of Thane North End, Rotaract Club of Smart City Navi Mumbai</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>Joint Project<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>Joint Project</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>MUD SOCCER</strong> - Rotaract Club of Dombivli Central, Rotaract Club of Kalyan Riverside, Rotaract Club of Birla College</li><li><strong>RRL: Rotary Rotaract League</strong> - Rotaract Club of Kalyan West, Rotaract Club of Kalyan Central, Rotaract Club of Birla College</li><li><strong>STEM CELL DONATION AWARENESS DRIVE</strong> - Rotaract Club of Smart City Navi Mumbai, Rotaract Club of Dombivli Suncity, Rotaract Club of Ambernath, Rotaract Club of Navi Mumbai Industrial Area</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>Joint Project</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>LIGHTING THE SMILES </strong> - Rotaract Club of Thane Creekside, Rotaract Club of K.V. Pendharkar College, Rotaract Club of Saraswati College, Rotaract Club of Thane Hills</li></ul></div>');
 		}
 		/*PR*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 41 && currentDate.getSeconds() == 20) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>PR & Marketing</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Happy Streets</strong> - Rotaract Club of Thane East</li><li><strong>Rangeela</strong> - Rotaract Club of Thane North End</li><li><strong>Find My Love</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>POWER OF ROTARACT</strong> - Rotaract Club of Birla College</li><li><strong>SWAAD of Dombivli (Phase 1)</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>PR & Marketing</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Newspaper Outreach </strong> - Rotaract Club of Saraswati College</li><li><strong>KNOW US</strong> - Rotaract Club of Ambernath</li><li><strong>It\'s Ludo time phase 2</strong> - Rotaract Club of Navi Mumbai Industrial Area</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>PR & Marketing<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>PR & Marketing</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Ambernath youth achievers award</strong> - Rotaract Club of Ambernath East</li><li><strong>Mahotsav</strong> - Rotaract Club of Thane East</li><li><strong>Moreया</strong> - Rotaract Club of Thane North End</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>PR & Marketing</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>RCUSG Calender 2020</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>D Mhanje Dance</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Banjoland</strong> - Rotaract Club of Ambernath East</li><li><strong>Open Mic by Hakuna Matata</strong> - Rotaract Club of Thane North End</li></ul></div>');
+		else if (cD == 19 && cH == 17 && cM == 30 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>PR & Marketing</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Happy Streets</strong> - Rotaract Club of Thane East</li><li><strong>Rangeela</strong> - Rotaract Club of Thane North End</li><li><strong>Find My Love</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>POWER OF ROTARACT</strong> - Rotaract Club of Birla College</li><li><strong>SWAAD of Dombivli (Phase 1)</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>PR & Marketing</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Newspaper Outreach </strong> - Rotaract Club of Saraswati College</li><li><strong>KNOW US</strong> - Rotaract Club of Ambernath</li><li><strong>It\'s Ludo time phase 2</strong> - Rotaract Club of Navi Mumbai Industrial Area</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>PR & Marketing<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>PR & Marketing</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Ambernath youth achievers award</strong> - Rotaract Club of Ambernath East</li><li><strong>Mahotsav</strong> - Rotaract Club of Thane East</li><li><strong>Moreया</strong> - Rotaract Club of Thane North End</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>PR & Marketing</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>RCUSG Calender 2020</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>D Mhanje Dance</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Banjoland</strong> - Rotaract Club of Ambernath East</li><li><strong>Open Mic by Hakuna Matata</strong> - Rotaract Club of Thane North End</li></ul></div>');
 		}
 		/*Sports*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 41 && currentDate.getSeconds() == 40) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>Sports</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Sports Extravaganza 2020</strong> - Rotaract Club of Thane Downtown</li><li><strong>Sports Underprivileged</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Shoot Score Shine</strong> - Rotaract Club of Thane North End</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>Sports</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Fast Feet</strong> - Rotaract Club of New Bombay Seaside</li><li><strong>Checkmate</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>YOGA CHALLENGE </strong> - Rotaract Club of Ambernath</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>Sports<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>Sports</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Ironfoot (Football Tournament)</strong> - Rotaract Club of Ambernath East</li><li><strong>Aim and Fire 2.0</strong> - Rotaract Club of SIES (Nerul)</li><li><strong>Swimming Competition</strong> - Rotaract Club of Thane Creekside</li><li><strong>weightbreakers</strong> - Rotaract Club of Ambernath</li><li><strong>KHEL MELA</strong> - Rotaract Club of Birla College</li><li><strong>Box Leg Cricket</strong> - Rotaract Club of Dombivli</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>Sports</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Le Panga 2.0</strong> - Rotaract Club of Saraswati College</li><li><strong>Throw IT</strong> - Rotaract Club of Thane Creekside</li><li><strong>Mindstriker 2.0</strong> - Rotaract Club of Ambernath</li><li><strong>SHOTPUT RELAY</strong> - Rotaract Club of Birla College</li><li><strong>Ride and Roll</strong> - Rotaract Club of Thane North End</li></ul></div>');
+		else if (cD == 19 && cH == 19 && cM == 00 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>Sports</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Sports Extravaganza 2020</strong> - Rotaract Club of Thane Downtown</li><li><strong>Sports Underprivileged</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Shoot Score Shine</strong> - Rotaract Club of Thane North End</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>Sports</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Fast Feet</strong> - Rotaract Club of New Bombay Seaside</li><li><strong>Checkmate</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>YOGA CHALLENGE </strong> - Rotaract Club of Ambernath</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>Sports<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>Sports</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Ironfoot (Football Tournament)</strong> - Rotaract Club of Ambernath East</li><li><strong>Aim and Fire 2.0</strong> - Rotaract Club of SIES (Nerul)</li><li><strong>Swimming Competition</strong> - Rotaract Club of Thane Creekside</li><li><strong>weightbreakers</strong> - Rotaract Club of Ambernath</li><li><strong>KHEL MELA</strong> - Rotaract Club of Birla College</li><li><strong>Box Leg Cricket</strong> - Rotaract Club of Dombivli</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>Sports</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Le Panga 2.0</strong> - Rotaract Club of Saraswati College</li><li><strong>Throw IT</strong> - Rotaract Club of Thane Creekside</li><li><strong>Mindstriker 2.0</strong> - Rotaract Club of Ambernath</li><li><strong>SHOTPUT RELAY</strong> - Rotaract Club of Birla College</li><li><strong>Ride and Roll</strong> - Rotaract Club of Thane North End</li></ul></div>');
 		}
 		/*ED*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 42 && currentDate.getSeconds() == 0) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>ED</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>LearnSession 2.0</strong> - Rotaract Club of Kalyan West</li><li><strong>PUBLIC DEMAND</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Corona.. Go Back!</strong> - Rotaract Club of Ambernath</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>ED</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>E-Talks</strong> - Rotaract Club of Link Town Airoli</li><li><strong>USGKart</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Startup Struggle Stories</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>SAVE THE DRIP </strong> - Rotaract Club of Ambernath</li><li><strong>Suncity Business Exchange </strong> - Rotaract Club of Dombivli Suncity</li><li><strong>BUILD YOUR BRAND </strong> - Rotaract Club of Navi Mumbai Hillside</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>ED<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>ED</h2> <p>Quarter 1 Nominations</p><h2 class="no-nominations">No Nominations</h2></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>ED</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Light it up</strong> - Rotaract Club of Bharati Vidyapeeth Sunrise</li><li><strong>SANGHARSH 2.0</strong> - Rotaract Club of Birla College</li><li><strong>Tejomay : Parva Dusre</strong> - Rotaract Club of Dombivili East</li></ul></div>');
+		else if (cD == 19 && cH == 20 && cM == 30 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>ED</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>LearnSession 2.0</strong> - Rotaract Club of Kalyan West</li><li><strong>PUBLIC DEMAND</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Corona.. Go Back!</strong> - Rotaract Club of Ambernath</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>ED</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>E-Talks</strong> - Rotaract Club of Link Town Airoli</li><li><strong>USGKart</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>SAVE THE DRIP </strong> - Rotaract Club of Ambernath</li><li><strong>Suncity Business Exchange </strong> - Rotaract Club of Dombivli Suncity</li><li><strong>BUILD YOUR BRAND </strong> - Rotaract Club of Navi Mumbai Hillside</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>ED<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>ED</h2> <p>Quarter 1 Nominations</p><h2 class="no-nominations">No Nominations</h2></div><div class="quarter-2 rotaract--quarter-main"> <h2>ED</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Light it up</strong> - Rotaract Club of Bharati Vidyapeeth Sunrise</li><li><strong>SANGHARSH 2.0</strong> - Rotaract Club of Birla College</li><li><strong>Tejomay : Parva Dusre</strong> - Rotaract Club of Dombivili East</li></ul></div>');
 		}
 		/*ISD*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 42 && currentDate.getSeconds() == 20) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>International Service</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>MeStree</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Thirst Burst</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>World Rotaract Week</strong> - Rotaract Club of Saraswati College</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>International Service</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Challenge? Accepted</strong> - Rotaract Club of Saraswati College</li><li><strong>SWEET FLOWER</strong> - Rotaract Club of Birla College</li><li><strong>Favour the Labour</strong> - Rotaract Club of Thane North End</li><li><strong>30 Days Around the World</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>International Service<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>International Service</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>COIN A PHOTO </strong> - Rotaract Club of Thane East</li><li><strong>GranFiesta</strong> - Rotaract Club of Ambernath East</li><li><strong>International Sign Language Day</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>goodness of charity </strong> - Rotaract Club of Ambernath</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>International Service</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Road Side Santa</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Chow Down</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>International men\'s day</strong> - Rotaract Club of Thane East</li></ul></div>');
+		else if (cD == 19 && cH == 22 && cM == 00 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>International Service</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>MeStree</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Thirst Burst</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>World Rotaract Week</strong> - Rotaract Club of Saraswati College</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>International Service</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Challenge? Accepted</strong> - Rotaract Club of Saraswati College</li><li><strong>SWEET FLOWER</strong> - Rotaract Club of Birla College</li><li><strong>Favour the Labour</strong> - Rotaract Club of Thane North End</li><li><strong>30 Days Around the World</strong> - Rotaract Club of Dombivli Suncity</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>International Service<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>International Service</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>COIN A PHOTO </strong> - Rotaract Club of Thane East</li><li><strong>GranFiesta</strong> - Rotaract Club of Ambernath East</li><li><strong>International Sign Language Day</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>Goodness of charity </strong> - Rotaract Club of Ambernath</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>International Service</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Road Side Santa</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li><li><strong>Chow Down</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>International men\'s day</strong> - Rotaract Club of Thane East</li></ul></div>');
 		}
 		/*PD*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 42 && currentDate.getSeconds() == 40) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>Professional Development</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>NEXT - Think Tank</strong> - Rotaract Club of Saraswati College</li><li><strong>Fluid Art Workshop</strong> - Rotaract Club of Thane Hills</li><li><strong>NEXT Think Tank</strong> - Rotaract Club of Dombivli</li><li><strong>The Buzzword</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>DANSPIRATION ( Bolly Lavani Workshop)</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Workshop Mela</strong> - Rotaract Club of Ambernath East</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>Professional Development</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Graphology Seminar</strong> - Rotaract Club of Link Town Airoli</li><li><strong>Monday Motivation</strong> - Rotaract Club of Dombivili East</li><li><strong>Summercamp 2.0</strong> - Rotaract Club of Ambernath</li><li><strong>Work (It) From Home</strong> - Rotaract Club of Thane North End</li><li><strong>Basics of Japanese Language</strong> - Rotaract Club of Thane Central</li><li><strong>Teacherly Thursdays</strong> - Rotaract Club of Smart City Navi Mumbai</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>Professional Development<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>Professional Development</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Hastakala</strong> - Rotaract Club of Link Town Airoli</li><li><strong>WORLD THROUGH MY LENS</strong> - Rotaract Club of K.V. Pendharkar College</li><li><strong>MIND TOOLS</strong> - Rotaract Club of Birla College</li><li><strong>Eco-friendly Tree Ganesha</strong> - Rotaract Club of KBP Premium</li><li><strong>My Friend Ganesha</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>Eloquence 4.0</strong> - Rotaract Club of Thane Downtown</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>Professional Development</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Meraki</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li></ul></div>');
+		else if (cD == 20 && cH == 10 && cM == 00 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>Professional Development</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>NEXT - Think Tank</strong> - Rotaract Club of Saraswati College</li><li><strong>Fluid Art Workshop</strong> - Rotaract Club of Thane Hills</li><li><strong>NEXT Think Tank</strong> - Rotaract Club of Dombivli</li><li><strong>The Buzzword</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>DANSPIRATION ( Bolly Lavani Workshop)</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Workshop Mela</strong> - Rotaract Club of Ambernath East</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>Professional Development</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>Graphology Seminar</strong> - Rotaract Club of Link Town Airoli</li><li><strong>Monday Motivation</strong> - Rotaract Club of Dombivili East</li><li><strong>Summercamp 2.0</strong> - Rotaract Club of Ambernath</li><li><strong>Work (It) From Home</strong> - Rotaract Club of Thane North End</li><li><strong>Basics of Japanese Language</strong> - Rotaract Club of Thane Central</li><li><strong>Teacherly Thursdays</strong> - Rotaract Club of Smart City Navi Mumbai</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>Professional Development<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>Professional Development</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>Hastakala</strong> - Rotaract Club of Link Town Airoli</li><li><strong>WORLD THROUGH MY LENS</strong> - Rotaract Club of K.V. Pendharkar College</li><li><strong>MIND TOOLS</strong> - Rotaract Club of Birla College</li><li><strong>Eco-friendly Tree Ganesha</strong> - Rotaract Club of KBP Premium</li><li><strong>My Friend Ganesha</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>Eloquence 4.0</strong> - Rotaract Club of Thane Downtown</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>Professional Development</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Meraki</strong> - Rotaract Club of Ulhasnagar Sapna Garden</li></ul></div>');
 		}
 		/*Clubserv*/
-		else if (currentDate.getDate() == 18 && currentDate.getHours() == 18 && currentDate.getMinutes() == 43 && currentDate.getSeconds() == 0) {
-			jQuery('.rotaract--nomination-parent').html('<div id="quarter-3" class="rotaract--quarter-main"> <h2>Club Service</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Rap battle and Dance battle</strong> - Rotaract Club of Saraswati College</li><li><strong>SYMPHONY: RCKR\'s PROM & Awards Night</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Roto Flea</strong> - Rotaract Club of SIES (Nerul)</li></ul></div><div id="quarter-4" class="rotaract--quarter-main"> <h2>Club Service</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>FRIENDS</strong> - Rotaract Club of Thane East</li><li><strong>ENDGAME</strong> - Rotaract Club of Dombivili East</li><li><strong>AMBARNATH\'S GOT TALENT</strong> - Rotaract Club of Ambernath</li><li><strong>Coffee With President</strong> - Rotaract Club of DYPSBB Satellite City</li><li><strong>Game Night(s)</strong> - Rotaract Club of Thane North End</li><li><strong>KARAOKE MASTI 2.0</strong> - Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>CHASING THE SEASON</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Park -O- Fiesta 2</strong> - Rotaract Club of SIES (Nerul)</li><li><strong>Freaky Friday</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>lock down ka Big Boss</strong> - Rotaract Club of Ambernath East</li></ul></div><div id="project-parent" class="rotaract--quarter-main"> <h2>Club Service<br>Project Nominations</h2></div><div id="quarter-1" class="rotaract--quarter-main"> <h2>Club Service</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>RUSH HOUR</strong> - Rotaract Club of SIES (Nerul)</li><li><strong>Club Outing 2.0</strong> - Rotaract Club of Smart City Navi Mumbai)</li><li><strong>Aventure 6.0</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Galexia</strong> - Rotaract Club of Thane North End</li></ul></div><div id="quarter-2" class="rotaract--quarter-main"> <h2>Club Service</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Christmas Party 3.0</strong> - Rotaract Club of Dombivili East</li><li><strong>Garba Night & DJ Night 2.0</strong> - Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>Pratham Swar - Diwali Pahat 2019 </strong> - Rotaract Club of Badlapur</li></ul></div>');
+		else if (cD == 20 && cH == 11 && cM == 30 && cS == 0) {
+			jQuery('.rotaract--nomination-parent').html('<div class="quarter-3 rotaract--quarter-main"> <h2>Club Service</h2> <p>Quarter 3 Nominations</p><ul class="rotaract--project-list"> <li><strong>Rap battle and Dance battle</strong> - Rotaract Club of Saraswati College</li><li><strong>SYMPHONY: RCKR\'s PROM & Awards Night</strong> - Rotaract Club of Kalyan Riverside</li><li><strong>Roto Flea</strong> - Rotaract Club of SIES (Nerul)</li></ul></div><div class="quarter-4 rotaract--quarter-main"> <h2>Club Service</h2> <p>Quarter 4 Nominations</p><ul class="rotaract--project-list"> <li><strong>FRIENDS</strong> - Rotaract Club of Thane East</li><li><strong>ENDGAME</strong> - Rotaract Club of Dombivili East</li><li><strong>AMBARNATH\'S GOT TALENT</strong> - Rotaract Club of Ambernath</li><li><strong>Coffee With President</strong> - Rotaract Club of DYPSBB Satellite City</li><li><strong>Game Night(s)</strong> - Rotaract Club of Thane North End</li><li><strong>KARAOKE MASTI 2.0</strong> - Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>CHASING THE SEASON</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Park -O- Fiesta 2</strong> - Rotaract Club of SIES (Nerul)</li><li><strong>Freaky Friday</strong> - Rotaract Club of Smart City Navi Mumbai</li><li><strong>Lockdown ka Big Boss</strong> - Rotaract Club of Ambernath East</li></ul></div><div class="project-parent rotaract--quarter-main"> <h2>Club Service<br>Project Nominations</h2></div><div class="quarter-1 rotaract--quarter-main"> <h2>Club Service</h2> <p>Quarter 1 Nominations</p><ul class="rotaract--project-list"> <li><strong>RUSH HOUR</strong> - Rotaract Club of SIES (Nerul)</li><li><strong>Club Outing 2.0</strong> - Rotaract Club of Smart City Navi Mumbai)</li><li><strong>Aventure 6.0</strong> - Rotaract Club of Dombivli Suncity</li><li><strong>Galexia</strong> - Rotaract Club of Thane North End</li></ul></div><div class="quarter-2 rotaract--quarter-main"> <h2>Club Service</h2> <p>Quarter 2 Nominations</p><ul class="rotaract--project-list"> <li><strong>Christmas Party 3.0</strong> - Rotaract Club of Dombivili East</li><li><strong>Garba Night & DJ Night 2.0</strong> - Rotaract Club of Navi Mumbai Industrial Area</li><li><strong>Pratham Swar - Diwali Pahat 2019 </strong> - Rotaract Club of Badlapur</li></ul></div>');
 		}
 	}
 </script>
