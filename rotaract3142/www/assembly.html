@@ -137,6 +137,12 @@
 		border-radius: 10px;
 	}
 
+	.page-button {
+		position: absolute;
+		top: 20px;
+		right: 30px;
+	}
+
 	@keyframes glowing {
 		0% {
 			background-position: 0 0;
@@ -389,14 +395,23 @@
 			width: 100%;
 			bottom: 60px;
 			bottom: auto;
-			top: 70px;
+			top: 80px;
+		}
+
+		.page-button {
+			top: 170px;
+			right: 50%;
+			transform: translate(50%);
 		}
 
 		.rotaract--quarter-main {
 			top: 20%;
 		}
 
-		iframe,
+		iframe {
+			top: 380px;
+		}
+
 		.rotaract--carousel {
 			top: 45%;
 		}
@@ -425,8 +440,9 @@
 	jQuery(document).ready(function ($) {
 		jQuery('.login--yes').on('click', function () {
 			jQuery('.login--overlay').fadeOut();
+			jQuery('.parentbody').append('<a class="page-button login--no glow-on-hover" href="javascript:void(0)">Reveal Secrets</a>');
 		});
-		jQuery('.login--no').on('click', function () {
+		jQuery('div').on('click', '.login--no', function () {
 			setTimeout(loadPage, 2000);
 		});
 	});
