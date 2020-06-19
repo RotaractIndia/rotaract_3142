@@ -5,6 +5,7 @@
 <style>
 	@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
 	@import url('https://fonts.googleapis.com/css?family=Raleway:300,900,100,600,400,500,800');
+
 	html {
 		height: 100vh;
 		overflow: none;
@@ -28,6 +29,140 @@
 		top: 0;
 		left: 0;
 		z-index: 9999;
+	}
+
+	.login--overlay {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 999999;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.login--modal {
+		background-color: #333;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 20px 30px;
+		border-radius: 3px;
+		box-shadow: 0 1px 12px 0 rgba(0, 0, 0, .2);
+	}
+
+	.login--modal-text {
+		font-size: 24px;
+		text-align: center;
+		color: #fff;
+	}
+
+	.login--yes,
+	.login--no {
+		width: 150px;
+		border-radius: 10px;
+		font-size: 16px;
+		cursor: pointer;
+		text-align: center;
+		background: #5e64ff;
+		padding: 10px 12px;
+		box-sizing: border-box;
+		height: 40px;
+		margin: 0 10px 0;
+		color: #fff;
+	}
+
+	.login--yes {
+		background: #888;
+	}
+
+	.login--yes:hover,
+	.login--no:hover {
+		text-decoration: none !important;
+		background: rgb(255, 30, 88) !important;
+		color: #fff !important;
+		transition: 0.3s all;
+	}
+
+	.glow-on-hover {
+		border: none;
+		outline: none;
+		color: #fff;
+		background: #111;
+		cursor: pointer;
+		position: relative;
+		z-index: 0;
+		border-radius: 10px;
+	}
+
+	.glow-on-hover:before {
+		content: '';
+		background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		background-size: 400%;
+		z-index: -1;
+		filter: blur(5px);
+		width: calc(100% + 4px);
+		height: calc(100% + 4px);
+		animation: glowing 20s linear infinite;
+		opacity: 0;
+		transition: opacity .3s ease-in-out;
+		border-radius: 10px;
+	}
+
+	.glow-on-hover:active {
+		color: #000
+	}
+
+	.glow-on-hover:active:after {
+		background: transparent;
+	}
+
+	.glow-on-hover:hover:before {
+		opacity: 1;
+	}
+
+	.glow-on-hover:after {
+		z-index: -1;
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #111;
+		left: 0;
+		top: 0;
+		border-radius: 10px;
+	}
+
+	@keyframes glowing {
+		0% {
+			background-position: 0 0;
+		}
+
+		50% {
+			background-position: 400% 0;
+		}
+
+		100% {
+			background-position: 0 0;
+		}
+	}
+
+	.login--page-buttons {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-moz-box-align: center;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+		-webkit-justify-content: flex-end;
+		justify-content: flex-end;
+		margin: 30px 0 0;
 	}
 
 	.assembly-logo {
@@ -209,7 +344,29 @@
 			z-index: 5;
 		}
 	}
-	
+
+	@media screen and (max-width: 960px) {
+
+		.login--yes,
+		.login--no {
+			font-size: 12px;
+			margin: 0 5px;
+			height: 32px;
+		}
+
+		.login--modal {
+
+			width: 300px;
+			top: 35%;
+			padding: 20px 15px;
+		}
+
+		.login--modal-text {
+			font-size: 18px;
+		}
+
+	}
+
 	@media screen and (max-width: 700px) {
 		iframe {
 			width: 95%;
@@ -239,7 +396,8 @@
 			top: 20%;
 		}
 
-		iframe, .rotaract--carousel {
+		iframe,
+		.rotaract--carousel {
 			top: 45%;
 		}
 
@@ -247,13 +405,35 @@
 </style>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
-
+<div class="login--overlay">
+	<div class="login--modal">
+		<p class="login--modal-text">Want to checkout the secrets?</p>
+		<div class="login--page-buttons">
+			<a class="login--no glow-on-hover" href="javascript:void(0)">Reveal Secrets</a>
+			<a class="login--yes" href="javascript:void(0)">Watch Trailer</a>
+		</div>
+	</div>
+</div>
 <div class="parentbody">
+
 	<div class="assembly-logo"><img src="/assets/rotaract3142/img/assembly/main-logo.png"></div>
 	<div class="aara-heist-logo"><img src="/assets/rotaract3142/img/assembly/aara-heist-logo.png"></div>
 	<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
-		src="https://www.youtube.com/embed/dhMcmZSM9T4?autoplay=1&loop=1&rel=0&showinfo=0" frameborder="0"></iframe>
+		src="https://www.youtube.com/embed/dhMcmZSM9T4?loop=1&rel=0&showinfo=0" frameborder="0"></iframe>
 </div>
+<script>
+	jQuery(document).ready(function ($) {
+		jQuery('.login--yes').on('click', function () {
+			jQuery('.login--overlay').fadeOut();
+		});
+		jQuery('.login--no').on('click', function () {
+			setTimeout(loadPage, 2000);
+		});
+	});
+	function loadPage() {
+		window.location.href = 'https://rotaract3142.org/nominations-page';
+	}
+</script>
 <script>
 
 	function CountdownTracker(label, value) {
