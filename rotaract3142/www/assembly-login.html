@@ -11,6 +11,7 @@
 		overflow: none;
 	}
 
+	.copy-right-area,
 	.web-footer,
 	.navbar {
 		display: none;
@@ -19,7 +20,7 @@
 	.parentbody {
 		width: 100vw;
 		height: 100vh;
-		background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0.6)), url(/assets/rotaract3142/img/assembly-and-aara-bg.png);
+		background: transparent;
 		background-size: cover;
 		background-position: 50% 20%;
 		background-repeat: no-repeat;
@@ -31,6 +32,25 @@
 		z-index: 9999;
 	}
 
+	#myVideo {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+	}
+	.video--event-bg {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		background-image: url(/assets/rotaract3142/img/event-bg-main.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+
+	}
 	.login--overlay {
 		position: fixed;
 		width: 100%;
@@ -99,14 +119,25 @@
 		margin: 30px 0 0;
 	}
 
+	.district-logo {
+		position: absolute;
+		top: 50px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.district-logo img {
+		width: 180px;
+	}
+
 	.assembly-logo {
 		position: absolute;
-		top: 0px;
+		bottom: 20px;
 		left: 0px;
 	}
 
 	.assembly-logo img {
-		width: 150px;
+		width: 180px;
 	}
 
 	.aara-heist-logo {
@@ -119,19 +150,20 @@
 		width: 170px;
 	}
 
+	.flip-clock {
+		display: none !important;
+	}
+
 	div {
 		display: inline-block;
 		line-height: 1;
-		padding: 10px;
-		font-size: 40px;
 		text-align: center;
 	}
 
 	iframe {
 		position: absolute;
-		left: 50%;
-		top: 40%;
-		transform: translate(-50%, -50%);
+		left: calc(50vw - 350px);
+		top: calc(50vh - 210px);
 		width: 700px;
 		height: 400px;
 		border-radius: 5px;
@@ -330,10 +362,282 @@
 			top: 20%;
 		}
 
-		iframe, .rotaract--carousel {
+		iframe,
+		.rotaract--carousel {
 			top: 45%;
 		}
 
+	}
+
+	/* define the animation */
+	@-webkit-keyframes marquee {
+		0% {
+			-webkit-transform: translate(0, 0);
+		}
+
+		100% {
+			-webkit-transform: translate(0%, -100%);
+		}
+	}
+
+	@-moz-keyframes marquee {
+		0% {
+			transform: translate(0, 0);
+		}
+
+		100% {
+			transform: translate(0, -100%);
+		}
+	}
+
+	/* define your limiting container */
+	.marquee {
+		border: solid 2px;
+		white-space: nowrap;
+		overflow: hidden;
+		box-sizing: border-box;
+		width: 220px;
+		position: absolute;
+		height: 400px;
+		border: transparent;
+		top: calc(50vh - 210px);
+		opacity: 0;
+		transition: 0.4s all;
+	}
+
+	.wingImage {
+		overflow: hidden;
+		box-sizing: border-box;
+		width: 220px;
+		position: absolute;
+		height: 300px;
+		top: calc(50vh - 155px);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 50% 50%;
+		opacity: 0;
+		transition: 0.4s all;
+	}
+
+	.wingImage.active-class,
+	.marquee.active-class {
+		opacity: 1;
+	}
+
+	.wingImage-right,
+	.marquee-right {
+		left: calc(50vw + 350px);
+	}
+
+	.wingImage-right {
+		background-image: url(/assets/rotaract3142/img/amit-wing.png);
+	}
+
+	.wingImage-left,
+	.marquee-left {
+		left: calc(50vw - 570px);
+	}
+
+	.wingImage-left {
+		background-image: url(/assets/rotaract3142/img/amit-wing.png);
+	}
+
+	/* this is the tray moving around your container */
+	.marquee .marquee-scroll {
+		display: inline-block;
+		padding: 400px 0 0;
+		text-indent: 0;
+		animation: marquee 20s linear infinite;
+		/* here you select the animation */
+		-webkit-animation: marquee 30s linear infinite;
+		/* here you select the animation */
+	}
+
+	.marquee .marquee-scroll h2 {
+		color: #fff;
+		text-transform: capitalize;
+		font-size: 18px;
+	}
+
+	.marquee .marquee-scroll p {
+		color: #fff;
+		text-transform: capitalize;
+		font-size: 16px;
+	}
+
+	/* pause the animation on mouse over */
+	/* .marquee .marquee-scroll:hover {
+		animation-play-state: paused;
+		-webkit-animation-play-state: paused;
+	} */
+	.sponsor-container {
+		position: fixed;
+		right: 50%;
+		bottom: 60px;
+		cursor: pointer;
+	}
+
+	.chevron {
+		position: absolute;
+		width: 28px;
+		height: 8px;
+		opacity: 0;
+		transform: scale3d(0.5, 0.5, 0.5);
+		animation: move 3s ease-out infinite;
+	}
+
+	.chevron:first-child {
+		animation: move 3s ease-out 1s infinite;
+	}
+
+	.chevron:nth-child(2) {
+		animation: move 3s ease-out 2s infinite;
+	}
+
+	.chevron:before,
+	.chevron:after {
+		content: ' ';
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 51%;
+		background: #fff;
+	}
+
+	.chevron:before {
+		left: 0;
+		transform: skew(0deg, 30deg);
+	}
+
+	.chevron:after {
+		right: 0;
+		width: 50%;
+		transform: skew(0deg, -30deg);
+	}
+
+	@keyframes move {
+		25% {
+			opacity: 1;
+
+		}
+
+		33% {
+			opacity: 1;
+			transform: translateY(30px);
+		}
+
+		67% {
+			opacity: 1;
+			transform: translateY(40px);
+		}
+
+		100% {
+			opacity: 0;
+			transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+		}
+	}
+
+	.text {
+		display: block;
+		margin-left: 20px;
+		font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+		font-size: 12px;
+		color: #fff;
+		text-transform: uppercase;
+		white-space: nowrap;
+		opacity: .25;
+		animation: pulse 2s linear alternate infinite;
+	}
+
+	@keyframes pulse {
+		to {
+			opacity: 1;
+		}
+	}
+
+	.sponsors-main-body {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		background-color: #fff;
+		left: 0;
+		top: 100%;
+		transition: 0.8s all;
+	}
+
+	.sponsors-main-body.show-them {
+		top: 0;
+	}
+
+	.sponsor-heading {
+		margin: 40px 0 20px;
+		font-size: 40px;
+		font-weight: 900;
+		font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	}
+
+	.outer {
+		position: absolute;
+		margin: auto;
+		width: 70px;
+		cursor: pointer;
+		top: 20px;
+		right: 20px;
+	}
+
+	.inner {
+		width: inherit;
+		text-align: center;
+	}
+
+	.inner label {
+		font-size: .8em;
+		line-height: 4em;
+		text-transform: uppercase;
+		color: #000;
+		transition: all .3s ease-in;
+		opacity: 0;
+		cursor: pointer;
+		width: 100%;
+		margin: 0;
+	}
+
+	.inner:before,
+	.inner:after {
+		position: absolute;
+		content: '';
+		height: 1px;
+		width: inherit;
+		background: #000;
+		left: 0;
+		transition: all .3s ease-in;
+	}
+
+	.inner:before {
+		top: 50%;
+		transform: rotate(45deg);
+	}
+
+	.inner:after {
+		bottom: 50%;
+		transform: rotate(-45deg);
+	}
+
+	.outer:hover label {
+		opacity: 1;
+	}
+
+	.outer:hover .inner:before,
+	.outer:hover .inner:after {
+		transform: rotate(0);
+	}
+
+	.outer:hover .inner:before {
+		top: 0;
+	}
+
+	.outer:hover .inner:after {
+		bottom: 0;
 	}
 </style>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -348,18 +652,80 @@
 	</div>
 </div>
 <div class="parentbody">
-
+	<div class="district-logo"><img src="/assets/rotaract3142/img/rid3142.png"></div>
 	<div class="assembly-logo"><img src="/assets/rotaract3142/img/assembly/main-logo.png"></div>
 	<div class="aara-heist-logo"><img src="/assets/rotaract3142/img/assembly/aara-heist-logo.png"></div>
+	<div class="wingImage wingImage-left"></div>
+	<div class="marquee marquee-left active-class">
+		<div class="marquee-scroll">
+			<h2>Platinum host clubs :</h2>
+			<h2>Rotaract Club of</h2>
+			<p>Dombivli</p>
+			<p>Kalyan West</p>
+			<p>Kalyan Riverside</p>
+			<p>New Bombay Seaside</p>
+			<p>Saraswati College</p>
+			<p>Smart City Navi Mumbai</p>
+			<p>SIES (Nerul)</p>
+			<p>Thane Downtown</p>
+			<p>Thane North End</p>
+			<p>Ulhasnagar Sapna Garden</p>
+		</div>
+	</div>
 	<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
 		src="https://www.youtube.com/embed/dhMcmZSM9T4?autoplay=1&loop=1&rel=0&showinfo=0" frameborder="0"></iframe>
+	<div class="marquee marquee-right active-class">
+		<div class="marquee-scroll">
+			<h2>Platinum host clubs :</h2>
+			<h2>Rotaract Club of :</h2>
+			<p>Dombivli</p>
+			<p>Kalyan West</p>
+			<p>Kalyan Riverside</p>
+			<p>New Bombay Seaside</p>
+			<p>Saraswati College</p>
+			<p>Smart City Navi Mumbai</p>
+			<p>SIES (Nerul)</p>
+			<p>Thane Downtown</p>
+			<p>Thane North End</p>
+			<p>Ulhasnagar Sapna Garden</p>
+		</div>
+	</div>
+	<div class="wingImage wingImage-right"></div>
+	<div class="sponsors-main-body">
+		<div class="sponsor-heading">Sponsors for Assembly and AARA 2020</div>
+		<div class="outer">
+			<div class="inner">
+				<label>Back</label>
+			</div>
+		</div>
+	</div>
+	<div class="sponsor-container">
+		<div class="chevron"></div>
+		<div class="chevron"></div>
+		<div class="chevron"></div>
+		<span class="text">Sponsors</span>
+	</div>
 </div>
+<div class="video--event-bg"></div>
+<video autoplay muted loop id="myVideo">
+	<source src="/assets/rotaract3142/img/assembly-event.mp4" type="video/mp4">
+</video>
 <script>
 	jQuery(document).ready(function ($) {
 		jQuery('.login--yes').on('click', function () {
 			jQuery('.login--overlay').fadeOut();
 		});
+		jQuery('.sponsor-container').on('click', function () {
+			jQuery('.sponsors-main-body').addClass('show-them');
+		});
+		jQuery('.outer').on('click', function () {
+			jQuery('.sponsors-main-body').removeClass('show-them');
+		});
+		setInterval(changeWings, 10000);
 	});
+	function changeWings() {
+		jQuery('.marquee, .wingImage').toggleClass('active-class');
+	}
 </script>
 <script>
 
