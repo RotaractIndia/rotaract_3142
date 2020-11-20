@@ -249,9 +249,9 @@
 		display: inline-block;
 		padding: 400px 0 0;
 		text-indent: 0;
-		animation: marquee 360s linear infinite;
+		animation: marquee 45s linear infinite;
 		/* here you select the animation */
-		-webkit-animation: marquee 360s linear infinite;
+		-webkit-animation: marquee 45s linear infinite;
 		/* here you select the animation */
 	}
 
@@ -593,8 +593,10 @@
 	}
 
 	.sponsor-block-6 {
-		background-image: url(/assets/rotaract3142/img/explore3142/sponsor-logos/AXPLORAR.jpeg);
-		background-size: 150px;
+		background: url(/assets/rotaract3142/img/explore3142/sponsor-logos/axplorar.png)rgba(0,0,0,.3);
+	background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 	}
 
 	.sponsor-block-7 {
@@ -603,7 +605,7 @@
 	}
 
 	.sponsor-block-8 {
-		background-image: url(/assets/rotaract3142/img/explore3142/sponsor-logos/vidwans.jepg);
+		background-image: url(/assets/rotaract3142/img/explore3142/sponsor-logos/vidwans.jpeg);
 		background-size: 160px;
 	}
 
@@ -663,7 +665,7 @@
 		z-index: 999;
 		width: 400px;
 		height: 400px;
-		top: -400px;
+		top: -410px;
 		border-radius: 3px;
 		border: 2px solid #fff;
 		transition: 0.3s all;
@@ -948,7 +950,7 @@
 </div>
 <div class="video--event-bg"></div>
 <video autoplay muted loop id="myVideo">
-	<source src="/assets/rotaract3142/img/explore3142/explore-event.mp4" type="video/mp4">
+	<source src="/assets/rotaract3142/img/explore3142/explore-video.mp4" type="video/mp4">
 </video>
 <script>
 	jQuery(document).ready(function ($) {
@@ -969,11 +971,11 @@
 			jQuery('.sponsors-main-body').removeClass('show-them');
 			jQuery('.sponsor-container').removeClass('show-them');
 		});
-		setInterval(changeWings, 60000);
+		//setInterval(changeWings, 60000);
 	});
-	function changeWings() {
+	/*function changeWings() {
 		jQuery('.marquee, .marquee').toggleClass('active-class');
-	}
+	}*/
 </script>
 
 </html>
