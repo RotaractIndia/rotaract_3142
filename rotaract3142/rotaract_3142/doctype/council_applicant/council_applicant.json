@@ -10,7 +10,16 @@
   "mobile_number",
   "first_preference",
   "second_preference",
-  "third_preference"
+  "third_preference",
+  "major_projects_chaired",
+  "contributions_towards_your_home_club",
+  "contributions_towards_zone_district",
+  "strengths",
+  "weaknesses",
+  "why_council",
+  "what_sets_you_apart",
+  "why_this_position",
+  "next_3_years"
  ],
  "fields": [
   {
@@ -61,9 +70,63 @@
    "fieldtype": "Data",
    "label": "Third Preference",
    "reqd": 1
+  },
+  {
+   "fieldname": "major_projects_chaired",
+   "fieldtype": "Text",
+   "label": "Major Projects chaired",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contributions_towards_your_home_club",
+   "fieldtype": "Text",
+   "label": "Contributions towards your Home Club",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contributions_towards_zone_district",
+   "fieldtype": "Text",
+   "label": "Contributions towards Zone_District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "strengths",
+   "fieldtype": "Text",
+   "label": "Strengths",
+   "reqd": 1
+  },
+  {
+   "fieldname": "weaknesses",
+   "fieldtype": "Text",
+   "label": "Weaknesses",
+   "reqd": 1
+  },
+  {
+   "fieldname": "why_council",
+   "fieldtype": "Text",
+   "label": "Why council",
+   "reqd": 1
+  },
+  {
+   "fieldname": "what_sets_you_apart",
+   "fieldtype": "Text",
+   "label": "What sets you apart",
+   "reqd": 1
+  },
+  {
+   "fieldname": "why_this_position",
+   "fieldtype": "Text",
+   "label": "Why this position",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_3_years",
+   "fieldtype": "Text",
+   "label": "Next 3 years",
+   "reqd": 1
   }
  ],
- "modified": "2021-01-20 00:47:54.763817",
+ "modified": "2021-01-20 01:45:37.845894",
  "modified_by": "Administrator",
  "module": "Rotaract 3142",
  "name": "Council Applicant",
