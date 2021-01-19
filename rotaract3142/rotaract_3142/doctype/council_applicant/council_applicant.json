@@ -1,0 +1,89 @@
+{
+ "creation": "2021-01-20 00:21:32.153490",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "applicant_name",
+  "club",
+  "email",
+  "mobile_number",
+  "first_preference",
+  "second_preference",
+  "third_preference"
+ ],
+ "fields": [
+  {
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Applicant Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "club",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Club",
+   "options": "Club",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mobile Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "first_preference",
+   "fieldtype": "Select",
+   "label": "First Preference",
+   "options": "Jt Secretary\nDirector Finance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "second_preference",
+   "fieldtype": "Data",
+   "label": "Second Preference",
+   "reqd": 1
+  },
+  {
+   "fieldname": "third_preference",
+   "fieldtype": "Data",
+   "label": "Third Preference",
+   "reqd": 1
+  }
+ ],
+ "modified": "2021-01-20 00:47:54.763817",
+ "modified_by": "Administrator",
+ "module": "Rotaract 3142",
+ "name": "Council Applicant",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "applicant_name",
+ "track_changes": 1
+}
