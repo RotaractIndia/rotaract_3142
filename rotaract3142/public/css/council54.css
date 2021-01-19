@@ -25,8 +25,8 @@ body {
 }
 
 .contact-image img {
-    border-radius: 6rem;
-    width: 11%;
+    /* border-radius: 6rem; */
+    /* width: 11%; */
     margin-top: 3%;
     /* transform: rotate(29deg); */
 }
@@ -36,7 +36,7 @@ body {
 }
 
 .contact-form form .row {
-    margin-bottom: -7%;
+    /* margin-bottom: -7%; */
 }
 
 .contact-form h3 {
@@ -46,14 +46,20 @@ body {
     color: #0062cc;
 }
 
+.btn-container{
+    display: grid;
+    justify-items: center;
+}
+
 .contact-form .btnContact {
-    width: 50%;
+    /* width: 50%; */
     border: none;
     border-radius: 1rem;
     padding: 1.5%;
     background: #dc3545;
     font-weight: 600;
     color: #fff;
+    text-decoration: none;
 }
 
 .btnContactSubmit {
