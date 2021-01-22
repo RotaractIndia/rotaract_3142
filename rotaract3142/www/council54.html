@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/assets/rotaract3142/css/bootstrap.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/assets/rotaract3142/css/council54.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Council 54</title>
+</head>
+
+<body>
+    <div class="container contact-form">
+        <div class="contact-image">
+            <img src="/assets/rotaract3142/img/logo.png" alt="dist3142-logo" />
+        </div>
+        <form>
+            <h3>Terms and Expectations</h3>
+            <h5>Read the below Terms & Expectations for Council 21-22:</h3>
+                <ol>
+                    <li>
+                        Should be a member of Rotaract movement for more than 2 years
+                        Or
+                        served as a President Or BOD
+                    </li>
+                    <li>
+                        Shouldn’t have completed 35 years of age on 30th June 2021
+                    </li>
+                    <li>
+                        Should be able to travel across district to attend projects and district commitments
+                    </li>
+                    <li>
+                        Should be available on all official communication channels
+                    </li>
+                    <li>
+                        Should conduct himself/herself in an acceptable manner on all district events and Rotaract
+                        official forums
+                    </li>
+                    <li>
+                        If selected as council member for the year 2021-22, the candidate is expected to follow the <a
+                            href="https://en.wikipedia.org/wiki/The_Four-Way_Test" target="blank">4 way
+                            Rotary test</a> on all platforms including social media
+                        ( in case of failure in abiding the following point DRR holds the power to discontinue the
+                        council membership and to open it for further applicants )
+                    </li>
+                </ol>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div>
+                                <input type="checkbox" id="submitCheckbox">
+                                <label for="submitCheckbox">Check the box if you agree all the above terms and
+                                    expectations.</label>
+                            </div>
+                            <div class="btn-container">
+                                <button id="submitBtn" onclick="location.href='/council-applications'"
+                                    class="btnContact btnDisabled" type="button" disabled>
+                                    Continue to apply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+</body>
+<script>
+    jQuery("#submitCheckbox").click(function () {
+        var checked_status = this.checked;
+        if (checked_status == true) {
+            jQuery("#submitBtn").removeAttr("disabled");
+            jQuery("#submitBtn").addClass("btnEnabled");
+            jQuery("#submitBtn").removeClass("btnDisabled");
+        } else {
+            jQuery("#submitBtn").attr("disabled", "disabled");
+            jQuery("#submitBtn").addClass("btnDisabled");
+            jQuery("#submitBtn").removeClass("btnEnabled");
+        }
+    });
+</script>
+
+</html>

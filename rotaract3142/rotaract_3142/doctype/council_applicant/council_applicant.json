@@ -1,0 +1,179 @@
+{
+ "creation": "2021-01-20 00:21:32.153490",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "applicant_name",
+  "club",
+  "email",
+  "mobile_number",
+  "date_of_birth",
+  "first_preference",
+  "first_preference_why",
+  "second_preference",
+  "second_preference_why",
+  "third_preference",
+  "third_preference_why",
+  "major_projects_chaired",
+  "contributions_towards_your_home_club",
+  "contributions_towards_zone_district",
+  "strengths",
+  "weaknesses",
+  "why_council",
+  "what_sets_you_apart",
+  "why_this_position",
+  "next_2_years"
+ ],
+ "fields": [
+  {
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Applicant Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "club",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Club",
+   "options": "Club",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mobile Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "first_preference",
+   "fieldtype": "Data",
+   "label": "First Preference",
+   "reqd": 1
+  },
+  {
+   "fieldname": "second_preference",
+   "fieldtype": "Data",
+   "label": "Second Preference ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "third_preference",
+   "fieldtype": "Data",
+   "label": "Third Preference",
+   "reqd": 1
+  },
+  {
+   "fieldname": "major_projects_chaired",
+   "fieldtype": "Small Text",
+   "label": "Major Projects chaired",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contributions_towards_your_home_club",
+   "fieldtype": "Small Text",
+   "label": "Contributions towards your Home Club",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contributions_towards_zone_district",
+   "fieldtype": "Small Text",
+   "label": "Contributions towards Zone_District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "strengths",
+   "fieldtype": "Small Text",
+   "label": "Strengths",
+   "reqd": 1
+  },
+  {
+   "fieldname": "weaknesses",
+   "fieldtype": "Small Text",
+   "label": "Weaknesses",
+   "reqd": 1
+  },
+  {
+   "fieldname": "why_council",
+   "fieldtype": "Small Text",
+   "label": "Why council",
+   "reqd": 1
+  },
+  {
+   "fieldname": "what_sets_you_apart",
+   "fieldtype": "Small Text",
+   "label": "What sets you apart",
+   "reqd": 1
+  },
+  {
+   "fieldname": "why_this_position",
+   "fieldtype": "Small Text",
+   "label": "Why this position",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "first_preference_why",
+   "fieldtype": "Small Text",
+   "label": "First Preference Why",
+   "reqd": 1
+  },
+  {
+   "fieldname": "second_preference_why",
+   "fieldtype": "Small Text",
+   "label": "Second Preference Why",
+   "reqd": 1
+  },
+  {
+   "fieldname": "third_preference_why",
+   "fieldtype": "Small Text",
+   "label": "Third Preference Why",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_2_years",
+   "fieldtype": "Small Text",
+   "label": "Next 2 years",
+   "reqd": 1
+  }
+ ],
+ "modified": "2021-01-22 01:02:43.380858",
+ "modified_by": "Administrator",
+ "module": "Rotaract 3142",
+ "name": "Council Applicant",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "applicant_name",
+ "track_changes": 1
+}
