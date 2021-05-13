@@ -34,14 +34,6 @@ icons = [
 		"label": "Pay Dues Online",
 		"icon": "octicon octicon-credit-card",
 		"link": '/pay'
-	},
-	{
-		"module": "Club Administration",
-		"label": "AARA Nomination",
-		"icon": "octicon octicon-gift",
-		"type": 'doctype',
-		"name": 'AARA Nomination',
-		"link": '#List/AARA Nomination/List'
 	}
 ]
 
