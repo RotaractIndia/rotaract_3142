@@ -42,6 +42,12 @@ icons = [
 	}
 ]
 
+doc_events = {
+	"District Payments": {
+		"on_submit": "rotaract3142.hook_events.district_payments.enable_reporting_access",
+	}
+}
+
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
 
