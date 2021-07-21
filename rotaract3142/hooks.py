@@ -24,6 +24,12 @@ icons = [
 		"label": "Pay Dues Online",
 		"icon": "octicon octicon-credit-card",
 		"link": '/pay'
+	},
+	{
+		"module": "Reporting",
+		"label": "FAQ",
+		"icon": "octicon octicon-credit-card",
+		"link": 'https://docs.google.com/document/d/1ybwmnK8poYZdvEHtw6nVhlaQG7ipLUfQ9ffbROG2HL4'
 	}
 ]
 
